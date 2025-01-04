@@ -1,0 +1,32 @@
+
+# Maintainer: deathemonic <deathemonic@gmail.com>
+
+pkgname=material-symbols
+pkgver=4.0.0
+pkgrel=1
+pkgdesc="Material Design Icons by Google"
+arch=('any')
+url="https://github.com/google/material-design-icons"
+license=('Apache')
+conflicts=('ttf-material-design-icons' 'ttf-material-design-icons-git' 'ttf-material-design-icons-extended' 'ttf-material-icons-git' 'otf-material-icons-git')
+source=("https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIcons-Regular.ttf"
+	"https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIconsOutlined-Regular.otf"
+	"https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIconsRound-Regular.otf"
+	"https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIconsSharp-Regular.otf"
+	"https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIconsTwoTone-Regular.otf"
+	"https://raw.githubusercontent.com/google/material-design-icons/master/LICENSE")
+noextract=("MaterialIcons-Regular.ttf"
+	"MaterialIconsOutlined-Regular.otf"
+	"MaterialIconsRound-Regular.otf"
+	"MaterialIconsSharp-Regular.otf"
+	"MaterialIconsTwoTone-Regular.otf"
+	"LICENSE")
+
+package() {
+	install -Dm644 MaterialIcons-Regular.ttf "$pkgdir/usr/share/fonts/TTF/MaterialIcons-Regular.otf"
+	install -Dm644 MaterialIconsOutlined-Regular.otf "$pkgdir/usr/share/fonts/OTF/MaterialIconsOutlined-Regular.otf"
+	install -Dm644 MaterialIconsRound-Regular.otf "$pkgdir/usr/share/fonts/OTF/MaterialIconsRound-Regular.otf"
+	install -Dm644 MaterialIconsSharp-Regular.otf "$pkgdir/usr/share/fonts/OTF/MaterialIconsSharp-Regular.otf"
+	install -Dm644 MaterialIconsTwoTone-Regular.otf "$pkgdir/usr/share/fonts/OTF/MaterialIconsTwoTone-Regular.otf"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
